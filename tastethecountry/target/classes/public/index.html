@@ -1,6 +1,97 @@
 <!doctype html>
-<html>
-  <body>
-    <h1>Hello Taste The Country</h1>
-  </body>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taste The Country</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__icon">🌍</div>
+      <div class="brand__text">
+        <h1>Taste The Country</h1>
+        <p>Välj ett land och få flagga, fakta och recept.</p>
+      </div>
+    </div>
+
+    <form id="searchForm" class="search">
+      <input id="countryInput" type="text" placeholder="Skriv ett land (t.ex. Japan)" required />
+      <button type="submit">Sök</button>
+    </form>
+  </header>
+
+  <main class="layout">
+    <section class="hero glass">
+      <div class="hero__left">
+        <p class="eyebrow">Valt land</p>
+        <h2 id="countryName" class="hero__title">—</h2>
+
+        <div class="chips">
+          <span class="chip"><span class="chip__k">Region</span> <b id="region">—</b></span>
+          <span class="chip"><span class="chip__k">Huvudstad</span> <b id="capital">—</b></span>
+          <span class="chip"><span class="chip__k">Befolkning</span> <b id="population">—</b></span>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="flag">
+          <img id="flagImg" alt="Flagga" />
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card glass">
+        <div class="card__head">
+          <h3>Recept</h3>
+          <span class="hint" id="mealTag">placeholder</span>
+        </div>
+
+        <div class="thumb">
+          <img id="mealImg" alt="Maträtt" />
+        </div>
+
+        <p class="line"><b id="mealName">—</b></p>
+        <a id="mealLink" class="link" href="#" target="_blank" rel="noreferrer">Öppna källa →</a>
+      </article>
+
+      <article class="card glass">
+        <div class="card__head">
+          <h3>Väder</h3>
+          <span class="hint">bonus</span>
+        </div>
+
+        <div class="weather">
+          <div class="weather__temp"><span id="temp">—</span><span class="deg">°C</span></div>
+          <div class="weather__desc" id="desc">—</div>
+        </div>
+
+        <p class="muted">
+          (Ni kan koppla OpenWeather senare – just nu är det bara layout.)
+        </p>
+      </article>
+
+      <article class="card glass">
+        <div class="card__head">
+          <h3>Snabbinfo</h3>
+          <span class="hint">valfritt</span>
+        </div>
+
+        <ul class="mini">
+          <li><span>Senaste sökning</span><b id="lastSearch">—</b></li>
+          <li><span>Status</span><b id="status">Redo</b></li>
+        </ul>
+
+        <p id="error" class="error" hidden></p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
 </html>
