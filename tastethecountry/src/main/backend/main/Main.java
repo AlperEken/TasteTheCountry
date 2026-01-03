@@ -1,11 +1,12 @@
-package main.java;
+package main;
 
 import io.javalin.Javalin;
+import org.json.JSONObject;
 
 public class Main {
     public static void main(String[] args) {
 
-        CountryClient countryClient = new CountryClient();
+        CountryClient client = new CountryClient();
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("/public");
@@ -13,9 +14,12 @@ public class Main {
 
         app.get("/api/country/{name}", ctx -> {
             String name = ctx.pathParam("name");
-            org.json.JSONObject countryData = countryClient.getCountryInfo(name);
-            if (countryData != null) {
-                ctx.contentType("application/json").result(countryData.toString());
+
+            // We call the client to get the big JSON object
+            JSONObject response = client.getMashup(name);
+
+            if (response != null) {
+                ctx.contentType("application/json").result(response.toString());
             } else {
                 ctx.status(404).result("Country not found");
             }
