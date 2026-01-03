@@ -15,7 +15,6 @@ public class Main {
         app.get("/api/country/{name}", ctx -> {
             String name = ctx.pathParam("name");
 
-            // We call the client to get the big JSON object
             JSONObject response = client.getMashup(name);
 
             if (response != null) {
