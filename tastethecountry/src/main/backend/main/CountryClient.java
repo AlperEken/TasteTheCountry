@@ -31,17 +31,13 @@ public class CountryClient {
     }
 
     public JSONObject getMashup(String searchName) {
-        // 1. Get Country Data
         Country country = fetchCountry(searchName);
         if (country == null) return null;
 
-        // 2. Get Weather (using the Capital from the Country object)
         Weather weather = fetchWeather(country.getCapital());
 
-        // 3. Get Meals (using the Demonym from the Country object)
         List<Meal> meals = fetchMeals(country.getDemonym());
 
-        // 4. Combine everything into one JSON
         JSONObject response = new JSONObject();
         response.put("country", country.toJson());
 
@@ -60,7 +56,6 @@ public class CountryClient {
         return response;
     }
 
-    // --- Helper Methods (Private) ---
 
     private Country fetchCountry(String name) {
         String json = makeRequest(countryApiUrl + "/name/" + name);
