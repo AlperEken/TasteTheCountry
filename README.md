@@ -18,26 +18,37 @@ Upon a successful request (Status 200), a JSON object is returned with the follo
 ```
 {
   "country": {
-    "name": { "common": "Turkey" },
-    "region": "Asia",
-    "capital": ["Ankara"],
-    "population": 85664944,
-    "flags": { "svg": "https://restcountries.com/data/tur.svg" },
-    "fact": "The flag of Turkey has a red field..."
+    "capital": [
+      "Stockholm"
+    ],
+    "fact": "The flag of Sweden has a blue field with a large golden-yellow cross that extend to the edges of the field. The vertical part of this cross is offset towards the hoist side.",
+    "name": {
+      "common": "Sweden"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/se.svg"
+    },
+    "region": "Europe",
+    "population": 10605098
   },
   "weather": {
-    "main": { "temp": 0.5 },
     "weather": [
-      { "description": "overcast clouds" }
-    ]
+      {
+        "description": "snow"
+      }
+    ],
+    "main": {
+      "temp": 0.25
+    }
   },
   "meals": {
     "meals": [
       {
-        "strMeal": "Adana kebab",
-        "strMealThumb": "https://www.themealdb.com/images/...",
-        "idMeal": "52808",
-        "strInstructions": "Step 1: Finely chop the peppers..."
+        "strMealThumb": "https://images.services.kitchenstories.io/hP04DDCA2zQ-oTBkgfZDNJ52CHw=/3840x0/filters:quality(85)/images.kitchenstories.io/wagtailOriginalImages/R2854-photo-final-1.jpg",
+        "idMeal": "manual_1",
+        "strMeal": "Swedish Meatballs",
+        "strSource": "https://kitchenstories.com/en/recipes/traditional-swedish-meatballs",
+        "strInstructions": "1. Mix meat and spices. 2. Fry in butter. 3. Serve with lingonberries. Smaklig måltid! :)"
       }
     ]
   }
